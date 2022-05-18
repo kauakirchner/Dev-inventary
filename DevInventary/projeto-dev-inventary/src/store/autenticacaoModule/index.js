@@ -9,10 +9,10 @@ export default {
     mutations:{
         cadastrarNovoUsuario(state, usuario){
             state.usuarios.push(usuario);
-            const usuariosJson = JSON.stringify(this.usuarios);
+            const usuariosJson = JSON.stringify(state.usuarios);
             localStorage.setItem('loginUsuario',usuariosJson);
             state.autenticado = true
-            console.log(this.usuariosJson)
+           
           
         }
     },

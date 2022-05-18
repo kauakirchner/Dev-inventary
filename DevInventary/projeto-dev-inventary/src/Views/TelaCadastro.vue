@@ -45,7 +45,7 @@ export default {
     },
     methods:{
         cadastrarNovoUsuario(){
-            return this.$store.commit('autenticacaoModule/cadastrarNovoUsuario', this.usuario),
+            this.$store.commit('autenticacaoModule/cadastrarNovoUsuario', this.usuario),
             this.$router.push('/login')
         },
         getUsuarios(){
