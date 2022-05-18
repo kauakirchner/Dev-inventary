@@ -3,20 +3,31 @@
     <router-view></router-view>
     <h1>Preencha o formulário para se cadastrar</h1>
     <div class="form">
-        <div>
-            <label for="">Email</label>
-            <input type="email" class="form-control" v-model="usuario.email">
+        <h2 class="my-4">Preencha o formulário para se cadastrar</h2>
+        <div class="row">
+            <div class="col-2">
+                <label class="label-control">Email</label>
+                <input type="email" class="form-control" v-model="usuario.email">
+            </div>
         </div>
-        <div>
-            <label for="">Senha</label>
-            <input type="password" class="form-control" v-model="usuario.senha">
+        <div class="row">
+            <div class="col-2">
+                <label class="label-control">Senha</label>
+                <input type="password" class="form-control" v-model="usuario.senha">
+            </div>    
         </div>
-        <div>
-            <label for="">Confirmar Senha</label>
-            <input type="password" class="form-control" v-model="usuario.senhaConfirmada">
+        <div class="row">
+            <div class="col-2">
+                <label class="label-control">Confirmar Senha</label>
+                <input type="password" class="form-control" v-model="usuario.senhaConfirmada">
+            </div>   
         </div>
     </div>
-    <button type="button" class="btn btn-primary" @click="cadastrarNovoUsuario">Enviar</button>
+    <div class="row">
+        <div class="col-2 my-3">
+            <button type="button" class="btn btn-success" @click="cadastrarNovoUsuario">Enviar</button>
+        </div>
+    </div>
   </div>
 </template>
 
