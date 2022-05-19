@@ -19,7 +19,7 @@
         </form>
         <div class="col-1">
             <button type="button" class="btn btn-primary" @click="entrarNoSistema">Entrar</button>
-            <button type="button" class="btn btn-sucess">Google</button>
+            <button type="button" class="btn btn-sucess">Google</button>çlkçlkçl
         </div>  
     </div>
 </div>
