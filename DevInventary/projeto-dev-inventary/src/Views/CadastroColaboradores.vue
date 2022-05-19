@@ -23,7 +23,7 @@
                 <div class="row my-4">
                     <div class="col-2">
                         <label class="form-label" name="telefone">telefone</label>
-                        <vee-field type="number" class="form-control" name="telefone" v-model="usuario.telefone"/>
+                        <vee-field type="text" class="form-control" name="telefone" v-model="usuario.telefone" v-mask="'(##) #####-####'"/>
                         <span class="text-danger" v-text="errors.telefone" v-show="errors.telefone"></span>
                     </div>
                     <div class="col-2">
@@ -40,7 +40,7 @@
                     <h3 class="my-4">Dados Endereço</h3>
                     <div class="col-2">
                         <label class="form-label" name="cep">Cep</label>
-                        <vee-field type="number" class="form-control" name="cep" v-model="usuario.endereco.cep"/>
+                        <vee-field type="text" class="form-control" name="cep" v-model="usuario.endereco.cep" v-mask="'#####-###'"/>
                         <span class="text-danger" v-text="errors.cep" v-show="errors.cep"></span>
                     </div>
                     <div class="col-2">
@@ -96,11 +96,14 @@
 </template>
 
 <script>
-
+import {mask} from 'vue-the-mask'
 import {Form, Field} from 'vee-validate'
 import '../Validate'
 
 export default {
+    directives:{
+        mask
+    },
     components:{
         'vee-form': Form,
         'vee-field': Field
