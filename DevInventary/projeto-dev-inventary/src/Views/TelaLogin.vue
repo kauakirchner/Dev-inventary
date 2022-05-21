@@ -1,59 +1,80 @@
 <template>
-<div class="container">
     <router-view></router-view>
-    <div class="row-1">
-        <span>Não possui uma conta?</span>
-        <button type="button" class="btn btn-sucess" @click="irParaCadastro">Cadastre-se</button>
-    </div>
-    <div class="form">
-        <h2 class="text-primary">Login</h2>
-        <form action="">
-            <div class="row-1">
-                <div class="col-2">
-                    <label class="label-control">E-Mail</label>
-                    <input type="email" class="form-control">
+    <div class="container-fluid">
+        <div class="row justify-content-md-center">
+            <div class="col-5">
+                <div class="col-12 p-5 ">
+                    <section>
+                        <h4 class="text-primary">Login</h4>
+                        <vee-form id="form-cadastro-colaboradores" @submit="autenticaUsuario" :validation-schema="schema" v-slot="{ errors }">
+                            <div class="form-group">
+                                <label class="label-control">E-Mail</label>
+                                <vee-field type="email" name="email" class="form-control" v-model="usuario.email"/>
+                                <span class="text-danger" v-text="errors.email" v-show="errors.email"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="label-control">Senha</label>
+                                <vee-field type="password" name="senha" class="form-control" v-model="usuario.senha"/>
+                                <span class="text-danger" v-text="errors.senha" v-show="errors.senha"></span>
+                            </div>
+                            <div class="row">
+                                <div class="col-5">
+                                    <a href="" @click="emConstrucao">Esqueceu a senha</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6" id="inptEntrar">
+                                    <button type="submit" class="btn btn-outline-primary mt-3">Entrar</button>
+                                </div>
+                                <div class="col-6">
+                                    <button type="button" class="btn btn mt-3" @click="emConstrucao">Google</button>
+                                </div>
+                            </div>
+                        </vee-form>
+                </section> 
+             </div>
+            </div>
+             <div class="col-7">
+                    <div class="col-12">
+                        <img src="../assets/imgLogin.jpg" class="img-fluid" alt="">
+                    </div>
                 </div>
-            </div>
-            <div class="row-1">
-                <div class="col-2">
-                    <label class="label-control">Senha</label>
-                    <input type="password" class="form-control">
-                </div>
-            </div>
-        </form>
-        <div class="row my-3">
-            <div class="col-1">
-                <button type="button" class="btn btn-sucess">Google</button>
-            </div>
-            <div class="col-1">
-                <button type="button" class="btn btn-primary" @click="autenticaUsuario">Entrar</button>
-            </div> 
-        </div>  
+        </div>
     </div>
-        <div class="col-2">
-        <img src="952b2afb-8575-4569-b713-52a99d181dad.jpg" alt="" class="img">
-    </div>
-</div>
 </template>
 
 <script>
+import {Form, Field} from 'vee-validate'
+import  '../Validate'
 export default {
+    components:{
+        'vee-field': Field,
+        'vee-form': Form,
+    },
+    data(){
+        const schema = {
+            email: 'required',
+            senha: 'required'
+        }
+
+        return{
+            usuarios:[],
+            usuario:{},
+            schema
+        }
+    },
     methods:{
-        irParaCadastro(){
-            this.$router.push('/cadastro')
+        getUsuarios(){
+            return this.$store.state.usuarios
+        },
+        emConstrucao(){
+            alert('Funcionalidade em construção...')
         }
     }
 }
 </script>
 
 <style>
-.img {
-    width: 40rem;
-    margin-left: 50rem;
-    margin-top: -10rem;
-
-}
-
 
 
 </style>
