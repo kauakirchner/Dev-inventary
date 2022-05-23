@@ -62,8 +62,8 @@
       <div class="row">
         <div class="col-12">
            <vee-form id="form-cadastro-colaboradores" @submit="save" :validation-schema="schema" v-slot="{ errors }">
-              <h6 class="mt-4 text-secondary">Dados pessoais</h6>
-            <div class="row mt-3">
+              <h6 class="mt-4 text-dark">Dados pessoais</h6>
+            <div class="row mt-4">
               <div class="col-2">
                     <label class="label-control text-secondary">Nome</label>
                     <vee-field type="text" class="form-control form-control-sm"  name="nome" v-model="usuario.nome"/>
@@ -97,7 +97,7 @@
                         <span class="text-danger" v-text="errors.cargo" v-show="errors.cargo"></span>
                     </div>
                 </div>
-                    <h6 class="mt-5 text-secondary">Dados Endereço</h6>
+                    <h6 class="mt-4 text-dark">Dados Endereço</h6>
                 <div class="row">
                     <div class="col-2">
                         <label class="label-control text-secondary">Cep</label>
