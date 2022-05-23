@@ -1,96 +1,155 @@
 <template>
-  <div class="container">
+<!-- <router-view></router-view>
+    <div class="container-fluid">
+        <div class="row justify-content-md-center">
+            <div class="col-5">
+                <div class="col-12">
+                    <section>
+                        <h4 class="text-primary">Preencha os campos para cadastrar</h4>
+                        <vee-form id="form-cadastro-colaboradores" @submit="autenticaUsuario" :validation-schema="schema" v-slot="{ errors }">
+                            <div class="col-2"> 
+                                <div class="form-group mt-5">
+                                    <label class="label-control text-secondary">Nome</label>
+                                    <vee-field type="text" class="form-control form-control-sm"  name="nome" v-model="usuario.nome"/>
+                                    <span class="text-danger" v-text="errors.nome" v-show="errors.nome"></span>  
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="form-group mt-5">
+                                    <label class="label-control text-secondary">Gênero</label>
+                                    <vee-field type="text" class="form-control form-control-sm"  name="genero" v-model="usuario.genero"/>
+                                    <span class="text-danger" v-text="errors.genero" v-show="errors.genero"></span>  
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="form-group mt-5">
+                                    <label class="label-control text-secondary">Data de Nascimento</label>
+                                    <vee-field type="text" class="form-control form-control-sm"  name="idade" v-model="usuario.idade"/>
+                                    <span class="text-danger" v-text="errors.idade" v-show="errors.idade"></span>  
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="form-group mt-5">
+                                    <label class="label-control text-secondary">Telefone</label>
+                                    <vee-field type="text" class="form-control form-control-sm"  name="telefone" v-model="usuario.telefone"/>
+                                    <span class="text-danger" v-text="errors.telefone" v-show="errors.telefone"></span>  
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="form-group mt-5">
+                                    <label class="label-control text-secondary">E-mail</label>
+                                    <vee-field type="text" class="form-control form-control-sm"  name="email" v-model="usuario.email"/>
+                                    <span class="text-danger" v-text="errors.email" v-show="errors.email"></span>  
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="form-group mt-5">
+                                    <label  class="label-control text-secondary">Cargo</label>
+                                    <vee-field type="text" class="form-control form-control-sm"  name="cargo" v-model="usuario.cargo"/>
+                                    <span class="text-danger" v-text="errors.cargo" v-show="errors.cargo"></span>  
+                                </div>
+                            </div>
+                            <h6 class="text-primary">Dados endereço</h6>
+                        </vee-form>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div> -->
+  <div class="container-fluid">
       <router-view></router-view>
-      <h1>Preencha os campos para cadastrar</h1>
-      <div class="form mx-4">
+      <h4 class="text-primary">Preencha os campos para cadastrar</h4>
+      <div class="row">
+        <div class="col-12">
            <vee-form id="form-cadastro-colaboradores" @submit="save" :validation-schema="schema" v-slot="{ errors }">
-              <h3 class="my-4">Dados pessoais</h3>
+              <h6 class="mt-4 text-dark">Dados pessoais</h6>
+            <div class="row mt-4">
               <div class="col-2">
-                    <label class="form-label" name="nome">Nome Completo</label>
-                    <vee-field type="text" class="form-control"  name="nome" v-model="usuario.nome"/>
-                    <span class="text-danger" v-text="errors.nome" v-show="errors.nome"></span>  <!--usar esse cara aqui pra se o campo não for preenchido corretamente --> 
+                    <label class="label-control text-secondary">Nome</label>
+                    <vee-field type="text" class="form-control form-control-sm"  name="nome" v-model="usuario.nome"/>
+                    <span class="text-danger" v-text="errors.nome" v-show="errors.nome"></span>  
               </div>
                 <div class="col-2">
-                    <label class="form-label" name="genero">Gênero</label>
-                    <vee-field type="text" class="form-control" name="genero" v-model="usuario.genero"/>
+                    <label class="label-control text-secondary">Gênero</label>
+                    <vee-field type="text" class="form-control form-control-sm" name="genero" v-model="usuario.genero"/>
                     <span class="text-danger" v-text="errors.genero" v-show="errors.genero"></span>
                 </div>
                 <div class="col-2">
-                    <label class="form-label" name="idade">Data De Nascimento</label>
-                    <vee-field type="date" class="form-control" name="idade" v-model="usuario.idade"/>
+                    <label class="label-control text-secondary">Data de nascimento</label>
+                    <vee-field type="date" class="form-control form-control-sm" name="idade" v-model="usuario.idade"/>
                     <span class="text-danger" v-text="errors.idade" v-show="errors.idade"></span>
                 </div>
-                <div class="row my-4">
+            </div>
+                <div class="row mt-4">
                     <div class="col-2">
-                        <label class="form-label" name="telefone">telefone</label>
-                        <vee-field type="text" class="form-control" name="telefone" v-model="usuario.telefone" v-mask="'(##) #####-####'"/>
+                        <label class="label-control text-secondary">Telefone</label>
+                        <vee-field type="text" class="form-control form-control-sm" name="telefone" v-model="usuario.telefone" v-mask="'(##) #####-####'"/>
                         <span class="text-danger" v-text="errors.telefone" v-show="errors.telefone"></span>
                     </div>
                     <div class="col-2">
-                        <label class="form-label" name="email">E-mail</label>
-                        <vee-field type="email" class="form-control" name="email" v-model="usuario.email"/>
+                        <label class="label-control text-secondary">E-mail</label>
+                        <vee-field type="email" class="form-control form-control-sm" name="email" v-model="usuario.email"/>
                         <span class="text-danger" v-text="errors.email" v-show="errors.email"></span>
                     </div>
                     <div class="col-2">
-                        <label class="form-label" name="cargo">Cargo</label>
-                        <vee-field type="text" class="form-control" name="cargo" v-model="usuario.cargo"/>
+                        <label class="label-control text-secondary">Cargo</label>
+                        <vee-field type="text" class="form-control form-control-sm" name="cargo" v-model="usuario.cargo"/>
                         <span class="text-danger" v-text="errors.cargo" v-show="errors.cargo"></span>
                     </div>
                 </div>
-                    <h3 class="my-4">Dados Endereço</h3>
+                    <h6 class="mt-4 text-dark">Dados Endereço</h6>
+                <div class="row">
                     <div class="col-2">
-                        <label class="form-label" name="cep">Cep</label>
-                        <vee-field type="text" class="form-control" name="cep" v-model="usuario.endereco.cep" v-mask="'#####-###'"/>
+                        <label class="label-control text-secondary">Cep</label>
+                        <vee-field type="text" class="form-control form-control-sm" name="cep" v-model="usuario.cep" v-mask="'#####-###'"/>
                         <span class="text-danger" v-text="errors.cep" v-show="errors.cep"></span>
                     </div>
                     <div class="col-2">
-                        <label class="form-label" name="cidade">Cidade</label>
-                        <vee-field type="text" class="form-control" name="cidade" v-model="usuario.endereco.cidade"/>
+                        <label class="label-control text-secondary">Cidade</label>
+                        <vee-field type="text" class="form-control form-control-sm" name="cidade" v-model="usuario.cidade"/>
                         <span class="text-danger" v-text="errors.cidade" v-show="errors.cidade"></span>
                     </div>
                     <div class="col-2">
-                        <label class="form-label" name="estado">Estado</label>
-                        <vee-field type="text" class="form-control" name="estado" v-model="usuario.endereco.estado"/>
+                        <label class="label-control text-secondary">Estado</label>
+                        <vee-field type="text" class="form-control form-control-sm" name="estado" v-model="usuario.estado"/>
                         <span class="text-danger" v-text="errors.estado" v-show="errors.estado"></span>
                     </div>
+                </div>
                     <div class="row">
                         <div class="col-2">
-                            <label class="form-label" name="logradouro">Logradouro</label>
-                            <vee-field type="text" class="form-control" name="logradouro" v-model="usuario.endereco.logradouro"/>
+                            <label class="label-control text-secondary">Logradouro</label>
+                            <vee-field type="text" class="form-control form-control-sm" name="logradouro" v-model="usuario.logradouro"/>
                             <span class="text-danger" v-text="errors.logradouro" v-show="errors.logradouro"></span>
                         </div>
                         <div class="col-2">
-                            <label class="form-label" name="numero">Número</label>
-                            <vee-field type="number" class="form-control" name="numero" v-model="usuario.endereco.numero"/>
+                            <label class="label-control text-secondary">Número</label>
+                            <vee-field type="number" class="form-control form-control-sm" name="numero" v-model="usuario.numero"/>
                             <span class="text-danger" v-text="errors.numero" v-show="errors.numero"></span>
+                        </div>
+                    
+                        <div class="col-2">
+                            <label class="label-control text-secondary">Complemento</label>
+                            <vee-field type="text" class="form-control form-control-sm" name="complemento" v-model="usuario.complemento"/>
+                            <span class="text-danger" v-text="errors.complemento" v-show="errors.complemento"></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-2">
-                            <label class="form-label" name="complemento">Complemento</label>
-                            <vee-field type="text" class="form-control" name="complemento" v-model="usuario.endereco.complemento"/>
-                            <span class="text-danger" v-text="errors.complemento" v-show="errors.complemento"></span>
-                        </div>
-                        <div class="col-2">
-                            <label class="form-label" name="bairro">Bairro</label>
-                            <vee-field type="text" class="form-control" name="bairro" v-model="usuario.endereco.bairro"/>
+                            <label class="label-control text-secondary">Bairro</label>
+                            <vee-field type="text" class="form-control form-control-sm" name="bairro" v-model="usuario.bairro"/>
                              <span class="text-danger" v-text="errors.bairro" v-show="errors.bairro"></span>
                         </div>
                         <div class="col-2">
-                            <label class="form-label"  name="referencia" >Ponto de referência</label>
-                            <vee-field type="text" class="form-control"  name="referencia" v-model="usuario.endereco.referencia"/>
+                            <label class="label-control text-secondary">Ponto de referência</label>
+                            <vee-field type="text" class="form-control form-control-sm"  name="referencia" v-model="usuario.referencia"/>
                             <span class="text-danger" v-text="errors.referencia" v-show="errors.referencia"></span>
                         </div>
+                    </div>
+                    <div class="col-2">
+                        <button button type="submit" class="btn btn-outline-success mt-3">Enviar</button>
                     </div>         
           </vee-form>
-          <div class="row">
-              <div class="col-2">
-                  <button type="submit" class="btn btn-success my-3">Enviar</button>
-              </div>
-               <div class="col-2">
-                  <button type="button" class="btn btn-warning my-3">Limpar</button>
-              </div>
-          </div>
+        </div>
       </div>
   </div>
 </template>
@@ -114,7 +173,7 @@ export default {
         genero: 'required',
         idade: 'required',
         telefone: 'required',
-        email: 'required',
+        email: 'requiredEmail',
         cargo: 'required',
         cep: 'required',
         cidade: 'required',
@@ -127,9 +186,7 @@ export default {
       }
       return{
           schema,
-          usuario:{
-            endereco:{}    
-          }
+          usuario:{}
       }
   }
 }
