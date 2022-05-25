@@ -56,6 +56,7 @@ export default {
 
         return{
             schema,
+            cadastrado: false,
             usuarios:[],
             usuario:{
                 email: null,
@@ -67,16 +68,18 @@ export default {
     },
     methods:{
         save(){
-            console.log('caiu')
-            this.$store.commit('autenticacaoModule/cadastrarNovoUsuario', this.usuario)
-            // this.$router.push('/login')
-            console.log(this.usuario.email)
-          
-           
+            
+            this.$store.commit('cadastroUsuario/cadastrarNovoUsuario', this.usuario)
+            this.$store.commit('cadastroUsuario/verificaSenhaConfirmada', this.usuario)
+            this.$router.push('/login')
         },
         getUsuarios(){
             return this.$store.state.usuarios
-        }
+        },
+        getCadastrado(){
+            return this.$store.state.cadastrado
+        }         
+        
     }
 }
 </script>
