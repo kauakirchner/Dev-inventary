@@ -1,7 +1,7 @@
 <template>
   <div class="container-main">
     <div class="container-side-bar">
-      <SideBar />
+      <SideBar/>
     </div>
     <div class="container-router">
       <router-view></router-view>
@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style>
-/* #app {
+#app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -42,5 +42,5 @@ export default {
 
 .container-router{
   flex: 85;
-}*/
+}
 </style>

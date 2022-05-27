@@ -1,51 +1,86 @@
 <template>
-  <div class="sidebar-container">
-      <h4 class="text-white">DevInventary</h4>
-      <div class="row mt-5">
-          <p class="text-white">Geral</p>
-      </div>
-      <div class="col mt-2">
-            <div class="col">
-                <button class="btn btn-outline-primary btn-sm">Inventário</button>
-            </div>
-                <div class="row">
-                    <div class="col mt-2">
-                    <button class="btn btn-outline-primary btn-sm" @click="sair">Sair</button>
-                </div>
-            </div>
-            <p class="text-white mt-2">Colaboradores</p>
-            <div class="row">
-                <div class="col">
-                    <button class="btn btn-outline-primary btn-sm">Cadastrar</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col mt-2">
-                    <button class="btn btn-outline-primary btn-sm">Listar</button>
-                </div>
-            </div>
-            <p class="text-white mt-2">Produto</p>
-            <div class="row">
-                <div class="col">
-                    <button class="btn btn-outline-primary btn-sm">Cadastrar</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col mt-2">
-                    <button class="btn btn-outline-primary btn-sm">Listar</button>
-                </div>
-            </div>
-      </div>
+<div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; height: 100%" v-if="mostrarSideBar">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      <span class="fs-4">Sidebar</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="#" class="nav-link active" aria-current="page">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+          Geral
+        </a>
+      </li>
+      <hr>
+      <li>
+        <router-link to="/inventário" class="btn btn-outline-primary">
+         Inventário
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/" class="btn btn-outline-primary mt-2">
+            Sair
+        </router-link>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-white">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+          Colaboradores
+        </a>
+      </li>
+      <li>
+        <router-link to="cadastroColaboradores" class="btn btn-outline-primary">
+          Cadastrar
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/listaColaboradores" class="btn btn-outline-primary mt-2">Listar</router-link>
+      </li>
+        <li>
+        <a href="#" class="nav-link text-white">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+          Produto
+        </a>
+      </li>
+      <li>
+          <router-link to="/cadastroProduto" class="btn btn-outline-primary">Cadastrar</router-link>
+      </li>
+      <li>
+          <router-link to="/emprestimoItem" class="btn btn-outline-primary mt-2">Empréstimo</router-link>
+      </li>
+      <hr>
+      <li>
+          <button class="btn btn-outline-primary" @click="mostrarSideBar = !mostrarSideBar">Esconder sidebar</button>
+      </li>
+    </ul>
+    <hr>
+    <div class="dropdown">
+      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+        <strong>mdo</strong>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+        <li><a class="dropdown-item" href="#">New project...</a></li>
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Sign out</a></li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
     name: 'SideBar',
-    methods:{
-        sair(){
-            this.$router.push('/')
+    data(){
+        return{
+            mostrarSideBar: true
         }
+    },
+    methods:{
+      
     }
 }
 </script>
