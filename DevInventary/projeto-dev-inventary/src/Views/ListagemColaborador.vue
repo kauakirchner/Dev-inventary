@@ -13,18 +13,18 @@
                     </div>
               </div>
                 <div class="col-md-3 mt-3">
-                    <div class="card" v-if="mostraInfos"> 
-                       <div class="card-body" @click="mostraInfos = !mostraInfos">
-                            <vue-gravatar class="gravatar"></vue-gravatar>
-                            <h5 class="card-title">Nome da pessoa</h5>
-                            <span class="card-text text-secondary">Email</span>
-                            <p  class="card-text text-secondary">Numero</p>
-                            <h6  class="card-title">Cargo</h6>
+                    <div class="card" v-for="colaborador in colaboradores" :key="colaborador.id"> 
+                       <div class="card-body">
+                            <vue-gravatar class="gravatar" email="{{colaborador.email}}"></vue-gravatar>
+                            <h5 class="card-title">{{colaborador.nome}}</h5>
+                            <span class="card-text text-secondary">{{colaborador.email}}</span>
+                            <p  class="card-text text-secondary">{{colaborador.telefone}}</p>
+                            <h6  class="card-title">{{colaborador.cargo}}</h6>
                         </div>
                     </div>
-                    <div v-else>
+                    <!-- <div v-else>
                         todas as infos do colaborador....
-                    </div>
+                    </div> -->
                 </div>
           </div>
       </div>
@@ -35,11 +35,18 @@
 export default {
    data(){
        return{
-           mostraInfos: true
+          
        }
    },
-   methods:{
-       
+   computed:{
+       colaboradores(){
+           return this.$store.state.cadastroColaborador.colaboradores
+        
+       }
+   },
+   mounted(){
+       this.$store.commit('cadastroColaborador/getLocalStorage'),
+       console.log('teste',this.colaboradores)
    }
 }
 </script>
