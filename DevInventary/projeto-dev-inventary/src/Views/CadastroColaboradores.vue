@@ -194,15 +194,15 @@ export default {
   methods:{
       //Puxando a função que insere colabores no localStorage e faz a consulta ViaCeps
       save(){
-        this.$store.commit('cadastroColaborador/insertColaborador')
+        this.colaborador.id = new Date().getTime()
+        this.$store.commit('cadastroColaborador/insertColaborador', this.colaborador)
             axios.get(`https://viacep.com.br/ws/${this.colaborador.cep}/json/`).then((response) =>{
                 console.log(response.data)
-                this.colaborador.cep = response.data
+                // this.colaborador.cep = response.data
+            }).catch((error) =>{
+                console.log(error.data)
             })
         
-      },
-      getColaboradores(){
-        return this.$store.state.colaboradores
       },
   }
 }

@@ -68,7 +68,6 @@ export default {
     },
     methods:{
         save(){
-            
             this.$store.commit('cadastroUsuario/cadastrarNovoUsuario', this.usuario)
             this.$store.commit('cadastroUsuario/verificaSenhaConfirmada', this.usuario)
             this.$router.push('/login')
