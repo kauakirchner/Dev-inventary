@@ -14,6 +14,9 @@ export default {
             localStorage.setItem('infosColaborador', colaboradorJson)
 
         },
+        getLocalStorage(state){
+            state.colaboradores = localStorage.getItem('infosColaborador') ? JSON.parse(localStorage.getItem('infosColaborador')) : []
+        }
         
     }
 }
