@@ -49,9 +49,9 @@ export default {
     },
     data(){
         const schema = {
-            email: 'required',
-            senha: 'required',
-            senhaConfirmada: 'required'
+            email: 'emailValidation',
+            senha: 'required|minLength:8',
+            senhaConfirmada: 'required|confirmed:senha'
         }
 
         return{
