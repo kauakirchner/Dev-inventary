@@ -174,7 +174,7 @@ export default {
         genero: 'required',
         idade: 'required',
         telefone: 'required',
-        email: 'required',
+        email: 'required|emailValidation',
         cargo: 'required',
         cep: 'required',
         cidade: 'required',
