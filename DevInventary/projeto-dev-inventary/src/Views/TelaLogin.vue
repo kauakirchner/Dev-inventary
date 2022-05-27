@@ -6,15 +6,15 @@
                 <div class="col-12 p-5 ">
                     <section>
                         <h4 class="text-primary">Login</h4>
-                        <vee-form id="form-cadastro-colaboradores" @submit="autenticaUsuario" :validation-schema="schema" v-slot="{ errors }">
+                        <vee-form id="form-cadastro-colaboradores" @submit="autenticaLogin" :validation-schema="schema" v-slot="{ errors }">
                             <div class="form-group">
                                 <label class="label-control">E-Mail</label>
-                                <vee-field type="email" name="email" class="form-control" v-model="usuario.email"/>
+                                <vee-field type="email" name="email" class="form-control" v-model="login.email"/>
                                 <span class="text-danger" v-text="errors.email" v-show="errors.email"></span>
                             </div>
                             <div class="form-group">
                                 <label class="label-control">Senha</label>
-                                <vee-field type="password" name="senha" class="form-control" v-model="usuario.senha"/>
+                                <vee-field type="password" name="senha" class="form-control" v-model="login.senha"/>
                                 <span class="text-danger" v-text="errors.senha" v-show="errors.senha"></span>
                             </div>
                             <div class="row">
@@ -58,14 +58,16 @@ export default {
         }
 
         return{
-            usuarios:[],
-            usuario:{},
+            login:{},
             schema
         }
     },
     methods:{
         getUsuarios(){
             return this.$store.state.usuarios
+        },
+        autenticaLogin(){
+            this.$store.commit('autenticaLogin/autenticaLogin', this.login)
         },
         emConstrucao(){
             alert('Funcionalidade em construção...')

@@ -1,9 +1,13 @@
 import {createStore} from 'vuex'
-import autenticacaoModule  from './autenticacaoModule'
+import cadastroUsuario  from './cadastroUsuario'
+import autenticaLogin from './autenticaLogin'
+import cadastroColaborador from './cadastroColaborador'
 
 const store = createStore({
     modules:{
-        autenticacaoModule
+        cadastroUsuario,
+        autenticaLogin,
+        cadastroColaborador
     }
 })
 
