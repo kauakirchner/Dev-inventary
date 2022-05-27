@@ -5,7 +5,7 @@ import CadastroColaboradores from '../Views/CadastroColaboradores.vue'
 import ListagemColaborador from '../Views/ListagemColaborador.vue'
 
 const routes = [
-    {path: '/login', component: TelaLogin},
+    {path: '/', component: TelaLogin},
     {path: '/cadastro', component: TelaCadastro},
     {path: '/cadastroColaboradores', component: CadastroColaboradores},
     {path: '/listaColaboradores', component: ListagemColaborador}  
