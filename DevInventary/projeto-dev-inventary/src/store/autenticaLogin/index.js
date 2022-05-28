@@ -3,7 +3,8 @@ export default{
     state(){
         return{
             autenticado: false,
-            credenciais: []
+            credenciais: [],
+            email: ''
         }
     },
     mutations:{
@@ -13,12 +14,17 @@ export default{
             if(item.email === login.email && item.senha === login.senha){
                 alert('login efetuado com sucesso')
                 state.autenticado = true
+                const tokenEmail = login.email
+                localStorage.setItem('token', tokenEmail)
             } 
             else{
                 alert('Email ou senha inválidos')
                 state.autenticado = false
             }
          });
+        },
+        getEmail(state){
+            state.email = localStorage.getItem('token')
         }
     }
 }

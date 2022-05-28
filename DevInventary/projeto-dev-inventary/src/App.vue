@@ -1,4 +1,5 @@
 <template>
+ <NavBar/>
   <div class="container-main">
     <div class="container-side-bar">
       <SideBar/>
@@ -11,11 +12,13 @@
 
 <script>
 import SideBar from './components/SideBar/SideBar.vue'
+import NavBar from './components/header/NavBar/NavBar.vue'
 
 export default {
   name: 'App',
   components: {
-    SideBar
+    SideBar,
+    NavBar
   }
 }
 </script>
