@@ -6,14 +6,13 @@ export default {
         }
     },
     mutations:{
-        //Função que cadastra item e salva no local storage
+        //Função que cadastra item e salva no localStorage.
         insertItem(state, item){
             state.itens.push(item);
             const itemJson = JSON.stringify(state.itens);
             localStorage.setItem('item', itemJson);
-            console.log('teste',state.itens);
         },
-        //Função que puxa o item do localStorage
+        //Função que puxa o item do localStorage.
         getItemLocalStorage(state){
             state.itens = localStorage.getItem('item') ? JSON.parse(localStorage.getItem('item'))  : []
         }
