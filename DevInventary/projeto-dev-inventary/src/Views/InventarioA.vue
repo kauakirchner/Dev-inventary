@@ -5,6 +5,7 @@
           <div class="col-12">
                 <div class="row g-3 mt-3">
                     <div class="">
+                        <transition name="lista">
                         <div class="row">
                             <div class="card col-sm-12 col-md-6 col-lg-3" v-for="item in itens" :key="item" > 
                                 <div class="card-body">
@@ -15,10 +16,10 @@
                                 <span class="tex-dark">{{item.marcaDoItem}}</span>
                                 <br>
                                 <span class="text-secondary">{{item.modeloItem}}</span>
-                        </div>
-                        </div>
-                      
+                            </div>
+                        </div> 
                     </div>
+                    </transition>
                     </div>
                  
                 </div>
@@ -41,5 +42,16 @@ export default {
 </script>
 
 <style>
-
+.lista-leave-to,
+.lista-enter-from{
+    opacity: 0;
+    font-size: 0px;
+}
+.lista-leave-from,
+.lista-enter-to{
+    opacity: 1;
+}
+.lista-move,.lista-enter-active,.lista-leave-active{
+    transition:all 2s;
+}
 </style>
