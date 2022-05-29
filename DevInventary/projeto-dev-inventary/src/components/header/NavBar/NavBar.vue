@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-dark bg-dark" aria-label="First navbar example" v-if="autenticado">
+  <nav class="navbar navbar-dark bg-dark" v-if="autenticado">
     <div class="container-fluid">
     <img src="NavImg.jpg" width="80" height="75" class="d-inline-block align-text-top">
         <div class="d-flex mr-2">
