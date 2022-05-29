@@ -6,7 +6,7 @@
                     <div class="col-12 mt-5">
                         <section>
                             <h4 class="text-primary">Cadastre-se</h4>
-                            <vee-form id="form-cadastro-colaboradores" @submit="save" :validation-schema="schema" v-slot="{ errors }">
+                            <vee-form id="form-cadastro-usuario" @submit="save" :validation-schema="schema" v-slot="{ errors }">
                                 <div class="form-group mt-5">
                                     <label class="label-control text-secondary">Email</label>
                                     <vee-field type="email" name="email" class="form-control" v-model="usuario.email"/>
@@ -58,29 +58,24 @@ export default {
 
         return{
             schema,
-            cadastrado: false,
-            usuarios:[],
-            usuario:{
-                email: null,
-                senha: null,
-                senhaConfirmada: null
-            },
-            
+            usuario:{}
         }
     },
     methods:{
         save(){
             this.$store.commit('cadastroUsuario/cadastrarNovoUsuario', this.usuario)
-            this.$store.commit('cadastroUsuario/verificaSenhaConfirmada', this.usuario)
+            alert('Cadastro efetuado com sucesso!')
             this.$router.push('/')
         },
-        getUsuarios(){
-            return this.$store.state.usuarios
-        },
-        getCadastrado(){
-            return this.$store.state.cadastrado
-        }         
         
+    },
+    computed:{
+        usuarios(){
+            return this.$store.state.cadastroUsuario.usuarios
+        },
+        cadastrado(){
+            return this.$store.state.cadastroUsuario.cadastrado
+        }         
     }
 }
 </script>

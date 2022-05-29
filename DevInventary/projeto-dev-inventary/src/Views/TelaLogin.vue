@@ -9,7 +9,7 @@
                                 <h4 class="text-primary">Login</h4>
                                 <label for="" class="label-control text-secondary">Não possui uma conta?</label>
                                 <router-link class="btn btn text-secondary" to="/cadastro">Cadastre-se</router-link>
-                                <vee-form id="form-cadastro-colaboradores" @submit="autenticaLogin" :validation-schema="schema" v-slot="{ errors }">
+                                <vee-form id="form-login" @submit="autenticaLogin" :validation-schema="schema" v-slot="{ errors }">
                                     <div class="form-group mt-2">
                                         <label class="label-control">E-Mail</label>
                                         <vee-field type="email" name="email" class="form-control" v-model="login.email"/>
@@ -67,9 +67,6 @@ export default {
         }
     },
     methods:{
-        getUsuarios(){
-            return this.$store.state.usuarios
-        },
         autenticaLogin(){
             this.$store.commit('autenticaLogin/autenticaLogin', this.login)
             this.$router.push('/inventario')
@@ -77,6 +74,11 @@ export default {
         emConstrucao(){
             alert('Funcionalidade em construção...')
         }
+    },
+    computed:{
+        usuarios(){
+            return this.$store.state.cadastroUsuarios.usuarios
+        },
     }
 }
 </script>
