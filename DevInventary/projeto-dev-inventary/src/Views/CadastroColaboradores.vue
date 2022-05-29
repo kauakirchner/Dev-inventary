@@ -145,9 +145,14 @@
                             <span class="text-danger" v-text="errors.referencia" v-show="errors.referencia"></span>
                         </div>
                     </div>
-                    <div class="col-2">
-                        <button button type="submit" class="btn btn-outline-success mt-3">Enviar</button>
-                    </div>         
+                    <div class="row g-3">
+                        <div class="col-2 mt-5">
+                            <button class="btn btn-outline-success">Salvar</button>
+                        </div>
+                        <div class="col-2 mt-5">
+                            <button class="btn btn-outline-warning" type="reset">Limpar</button>
+                        </div>
+                    </div>        
           </vee-form>
         </div>
       </div>
@@ -202,6 +207,7 @@ export default {
             }).catch((error) =>{
                 console.log(error.data)
             })
+            alert('Cadastro realizado com sucesso')
         
       },
   }
