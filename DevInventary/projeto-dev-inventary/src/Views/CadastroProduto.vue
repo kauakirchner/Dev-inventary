@@ -54,10 +54,9 @@
             <div class="row g-3">
                 <div class="col-4 mt-5">
                   <button class="btn btn-outline-success">Salvar</button>
-                  
                 </div>
                 <div class="col-4 mt-5">
-                  <button class="btn btn-outline-warning">Limpar</button>
+                  <button class="btn btn-outline-warning" type="reset">Limpar</button>
                 </div>
             </div>
       </vee-form>
@@ -93,7 +92,7 @@ export default {
       insertItem(){
         this.item.id = new Date().getTime()
         this.$store.commit('cadastroItem/insertItem', this.item),
-        alert('cadastro realizado com sucesso')
+        alert('Cadastro realizado com sucesso')
       }
     },
     computed:{
