@@ -6,22 +6,21 @@
                 <div class="row g-3 mt-3">
                     <div class="">
                         <transition name="lista">
-                        <div class="row">
-                            <div class="card col-sm-12 col-md-6 col-lg-3" v-for="item in itens" :key="item" > 
-                                <div class="card-body">
-                                <img :src="item.urlFotoItem" width="80" height="75" class="d-inline-block align-text-top" alt="">
-                                <br>
-                                <span class="text-secondary sm">{{item.descItem}}</span>
-                                <br>
-                                <span class="tex-dark">{{item.marcaDoItem}}</span>
-                                <br>
-                                <span class="text-secondary">{{item.modeloItem}}</span>
+                            <div class="row">
+                                <div class="card col-sm-12 col-md-6 col-lg-3" v-for="item in itens" :key="item" > 
+                                    <div class="card-body">
+                                        <img :src="item.urlFotoItem" width="80" height="75" class="d-inline-block align-text-top" alt="">
+                                        <br>
+                                        <span class="text-secondary sm">{{item.descItem}}</span>
+                                        <br>
+                                        <span class="tex-dark">{{item.marcaDoItem}}</span>
+                                        <br>
+                                        <span class="text-secondary">{{item.modeloItem}}</span>
+                                    </div>
+                                </div> 
                             </div>
-                        </div> 
+                        </transition>
                     </div>
-                    </transition>
-                    </div>
-                 
                 </div>
           </div>
       </div>
