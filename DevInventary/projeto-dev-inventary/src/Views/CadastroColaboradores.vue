@@ -126,7 +126,7 @@ export default {
         telefone: 'required',
         email: 'required|emailValidation',
         cargo: 'required',
-        cep: 'required',
+        cep: 'required|lengthCep:8',
         cidade: 'required',
         estado: 'required',
         logradouro: 'required',
@@ -147,10 +147,9 @@ export default {
         this.colaborador.id = new Date().getTime()
         this.$store.commit('cadastroColaborador/insertColaborador', this.colaborador)
             axios.get(`https://viacep.com.br/ws/${this.colaborador.cep}/json/`).then((response) =>{
-                console.log(response.data)
-                // this.colaborador.cep = response.data
+                this.colaborador.cep = response.data
             }).catch((error) =>{
-                console.log(error.data)
+                return error
             })
             alert('Cadastro realizado com sucesso')
         
