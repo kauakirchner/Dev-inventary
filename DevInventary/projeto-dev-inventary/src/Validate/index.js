@@ -47,8 +47,15 @@ const equalPasswords = defineRule('confirmed', (value, [target], ctx) => {
     return 'Senhas diferentes!!';
   });
 
+  const minLengthCep = defineRule('minLengthCep', (campo, [target]) =>{
+      //Função que define um mínimo de caracteres para o cep
+      if(campo.length != target){
+          return 'Cep inválido!!'
+      }
+  })
 
 
 
 
-export {requiredRule, requiredEmail, equalPasswords, minLength}
+
+export {requiredRule, requiredEmail, equalPasswords, minLength, minLengthCep}
