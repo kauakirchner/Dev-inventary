@@ -52,10 +52,10 @@
                 </div>
             </div>
             <div class="row g-3">
-                <div class="col-4 mt-5">
+                <div class="col-2 mt-5">
                   <button class="btn btn-outline-success">Salvar</button>
                 </div>
-                <div class="col-4 mt-5">
+                <div class="col-2 mt-5">
                   <button class="btn btn-outline-warning" type="reset">Limpar</button>
                 </div>
             </div>
