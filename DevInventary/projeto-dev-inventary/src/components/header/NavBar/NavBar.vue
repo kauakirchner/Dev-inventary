@@ -1,17 +1,19 @@
 <template>
-  <nav class="navbar navbar-dark bg-dark" v-if="autenticado">
-    <div class="container-fluid">
-    <img src="NavImg.jpg" width="80" height="75" class="d-inline-block align-text-top">
-        <div class="d-flex mr-2">
-            <ul class="navbar-nav w-100 align-items-center">
-                <li class="nav-item ml-auto">
-                    <span class="text-white" v-text="getEmail"></span>
-                    <vue-gravatar class="gravatar" email="{{getEmail}}"></vue-gravatar>
-                </li>
-            </ul>
-        </div>
-    </div>
-  </nav>
+    <transition name="header">
+        <nav class="navbar navbar-dark bg-dark" v-if="autenticado">
+            <div class="container-fluid">
+            <img src="NavImg.jpg" width="80" height="75" class="d-inline-block align-text-top">
+                <div class="d-flex mr-2">
+                    <ul class="navbar-nav w-100 align-items-center">
+                        <li class="nav-item ml-auto">
+                            <span class="text-white" v-text="getEmail"></span>
+                            <vue-gravatar class="gravatar" email="{{getEmail}}"></vue-gravatar>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </transition>
 </template>
 
 <script>
@@ -41,5 +43,17 @@ export default {
 .NavImg{
     width: 6vw;
     height: 12vh;
+}
+.header-leave-to,
+.header-enter-from{
+    opacity: 0;
+    font-size: 0px;
+}
+.header-leave-from,
+.header-enter-to{
+    opacity: 1;
+}
+.header-enter-active,.header-leave-active{
+    transition:all 2s;
 }
 </style>
