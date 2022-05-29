@@ -1,6 +1,7 @@
 import {defineRule} from 'vee-validate'
 
 const validateEmail = (email) => {
+    //Função que valida email.
     return String(email)
       .toLowerCase()
       .match(
@@ -9,6 +10,7 @@ const validateEmail = (email) => {
   };
 
 const requiredRule = defineRule('required', campo =>{
+    //Função que torna o campo obrigatório.
     if(!campo || campo.length === 0){
         return 'Campo obrigatório!!'
     }
@@ -16,10 +18,10 @@ const requiredRule = defineRule('required', campo =>{
 });
 
 const minLength = defineRule('minLength',  (campo, [target]) =>{
+    //Função que valida se a senha tem ao menos 8 caracteres.
     if(!campo || campo.length === 0){
         return 'Campo obrigatório!!'
     }
-    console.log('target', target)
     if(campo.length < target ){
         return 'A senha deve conter no mínimo de 8 caracteres'
     }
@@ -27,8 +29,8 @@ const minLength = defineRule('minLength',  (campo, [target]) =>{
 });
 
 const requiredEmail = defineRule('emailValidation',campo =>{
+    //Função que chama a de validação de email e a torna um campo obrigatório.
     if(!campo || campo.length === 0){
-        console.log('1')
         return 'Campo obrigatório!!'
     }
     if(!validateEmail(campo)){
@@ -38,7 +40,7 @@ const requiredEmail = defineRule('emailValidation',campo =>{
 });
 
 const equalPasswords = defineRule('confirmed', (value, [target], ctx) => {
-    console.log('ctx', ctx.form)
+    //Função que valida se a senha e a senha confirmada são iguais
     if (value === ctx.form[target]) {
       return true;
     }
