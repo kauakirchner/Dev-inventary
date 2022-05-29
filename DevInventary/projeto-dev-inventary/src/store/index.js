@@ -3,7 +3,7 @@ import cadastroUsuario  from './cadastroUsuario'
 import autenticaLogin from './autenticaLogin'
 import cadastroColaborador from './cadastroColaborador'
 import cadastroItem from './cadastroItem'
-import NomeRotaNavBar from './NomeRotaNavBar'
+
 
 const store = createStore({
     modules:{
@@ -11,7 +11,6 @@ const store = createStore({
         autenticaLogin,
         cadastroColaborador,
         cadastroItem,
-        NomeRotaNavBar
     }
 })
 
