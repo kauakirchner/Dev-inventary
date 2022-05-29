@@ -4,12 +4,13 @@ import autenticaLogin from './autenticaLogin'
 import cadastroColaborador from './cadastroColaborador'
 import cadastroItem from './cadastroItem'
 
+
 const store = createStore({
     modules:{
         cadastroUsuario,
         autenticaLogin,
         cadastroColaborador,
-        cadastroItem
+        cadastroItem,
     }
 })
 
