@@ -70,7 +70,7 @@ export default {
         save(){
             this.$store.commit('cadastroUsuario/cadastrarNovoUsuario', this.usuario)
             this.$store.commit('cadastroUsuario/verificaSenhaConfirmada', this.usuario)
-            this.$router.push('/login')
+            this.$router.push('/')
         },
         getUsuarios(){
             return this.$store.state.usuarios
