@@ -10,11 +10,56 @@ import EmprestimoItem from '../Views/EmprestimoItem.vue'
 const routes = [
     {path: '/', component: TelaLogin},
     {path: '/cadastro', component: TelaCadastro},
-    {path: '/cadastroColaboradores', component: CadastroColaboradores},
-    {path: '/listaColaboradores', component: ListagemColaborador},
-    {path: '/CadastroProduto', component: CadastroProduto},
-    {path: '/inventario', component: InventarioA},
-    {path: '/emprestimoItem', component: EmprestimoItem}   
+    {path: '/cadastroColaboradores', component: CadastroColaboradores,
+        beforeEnter: (to) =>{
+            const autenticado = localStorage.getItem('loginUsuario')
+            if(autenticado){
+                return true
+            }
+            to = '/cadastro'
+            return to 
+        }
+    },
+    {path: '/listaColaboradores', component: ListagemColaborador,
+        beforeEnter: (to) =>{
+            const autenticado = localStorage.getItem('loginUsuario')
+            if(autenticado){
+                return true
+            }
+            to = '/cadastro'
+            return to 
+        }
+    },
+    {path: '/CadastroProduto', component: CadastroProduto,
+        beforeEnter: (to) =>{
+            const autenticado = localStorage.getItem('loginUsuario')
+            if(autenticado){
+                return true
+            }
+            to = '/cadastro'
+            return to 
+        }
+    },
+    {path: '/inventario', component: InventarioA,
+    beforeEnter: (to) =>{
+        const autenticado = localStorage.getItem('loginUsuario')
+        if(autenticado){
+            return true
+        }
+        to = '/cadastro'
+        return to 
+    }
+    },
+    {path: '/emprestimoItem', component: EmprestimoItem,
+    beforeEnter: (to) =>{
+        const autenticado = localStorage.getItem('loginUsuario')
+        if(autenticado){
+            return true
+        }
+        to = '/cadastro'
+        return to 
+    }
+    }   
 ]
 
 const router = createRouter({
