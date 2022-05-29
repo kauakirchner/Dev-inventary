@@ -10,23 +10,24 @@
                                     <input type="text" class="form-control form-control" id="inptBusca" placeholder="digite o nome do colaborador">
                                     <div class="col">
                                         <button class="btn btn-outline-primary">Buscar</button>
+                                    </div>    
+                            </div>
+                        <transition name="lista">
+                            <div class="row">
+                                <div class="card col-sm-12 col-md-6 col-lg-3 mt-3" v-for="colaborador in colaboradores" :key="colaborador.id">
+                                    <div class="card-body">
+                                        <vue-gravatar class="gravatar" email="{{colaborador.email}}"></vue-gravatar>
+                                        <h5 class="card-title">{{colaborador.nome}}</h5>
+                                        <span class="card-text text-secondary">{{colaborador.email}}</span>
+                                        <p  class="card-text text-secondary">{{colaborador.telefone}}</p>
+                                        <h6  class="card-title">{{colaborador.cargo}}</h6>
                                     </div>
-                                     
-                            </div>
-                        <div class="row">
-                            <div class="card col-sm-12 col-md-6 col-lg-3 mt-3" v-for="colaborador in colaboradores" :key="colaborador.id">
-                                <div class="card-body">
-                                <vue-gravatar class="gravatar" email="{{colaborador.email}}"></vue-gravatar>
-                                <h5 class="card-title">{{colaborador.nome}}</h5>
-                                <span class="card-text text-secondary">{{colaborador.email}}</span>
-                                <p  class="card-text text-secondary">{{colaborador.telefone}}</p>
-                                <h6  class="card-title">{{colaborador.cargo}}</h6>
-                            </div>
-                        </div>
+                                </div> 
+                            </div>     
+                    </transition>
                     </div>
-                </div>
             </div>
-          </div>
+        </div>
       </div>
   </div>
 </template>
@@ -58,5 +59,17 @@ export default {
 #inptBusca{
     width: 16vw;
     height: 5vh;
+}
+.lista-leave-to,
+.lista-enter-from{
+    opacity: 0;
+    font-size: 0px;
+}
+.lista-leave-from,
+.lista-enter-to{
+    opacity: 1;
+}
+.lista-move,.lista-enter-active,.lista-leave-active{
+    transition:all 2s;
 }
 </style>

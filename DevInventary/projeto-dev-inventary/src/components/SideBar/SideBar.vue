@@ -101,16 +101,4 @@ export default {
     transition:all 2s;
 }
 
-.lista-leave-to,
-.lista-enter-from{
-    opacity: 0;
-    font-size: 0px;
-}
-.lista-leave-from,
-.lista-enter-to{
-    opacity: 1;
-}
-.lista-move,.lista-enter-active,.lista-leave-active{
-    transition:all 2s;
-}
 </style>
