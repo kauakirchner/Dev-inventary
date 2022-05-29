@@ -126,7 +126,7 @@ export default {
         telefone: 'required',
         email: 'required|emailValidation',
         cargo: 'required',
-        cep: 'required|minLengthCep:8',
+        cep: 'required|lengthCep:8',
         cidade: 'required',
         estado: 'required',
         logradouro: 'required',
