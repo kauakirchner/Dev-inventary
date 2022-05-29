@@ -44,8 +44,7 @@ export default {
        }
    },
    mounted(){
-       this.$store.commit('cadastroColaborador/getLocalStorage'),
-       console.log('teste',this.colaboradores)
+       this.$store.commit('cadastroColaborador/getLocalStorage')
    }
 }
 </script>
