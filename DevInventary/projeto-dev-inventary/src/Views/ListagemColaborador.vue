@@ -6,11 +6,12 @@
             <div class="row g-3 mt-3">
                     <div class="">
                         <h4 class="text-primary main-title">Digite o nome do colaborador para buscar</h4>
-                            <div class="row-mt-2">
-                                <input type="text" class="form-control form-control" id="inptBusca" placeholder="digite o nome do colaborador">
-                                <div class="col-sm-12 col-md-6 col-lg-3 mt-2">
-                                    <button class="btn btn-outline-primary">Buscar</button> 
-                                </div>
+                            <div class="content input-group">
+                                    <input type="text" class="form-control form-control" id="inptBusca" placeholder="digite o nome do colaborador">
+                                    <div class="col">
+                                        <button class="btn btn-outline-primary">Buscar</button>
+                                    </div>
+                                     
                             </div>
                         <div class="row">
                             <div class="card col-sm-12 col-md-6 col-lg-3 mt-3" v-for="colaborador in colaboradores" :key="colaborador.id">
