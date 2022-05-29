@@ -6,7 +6,7 @@
           <h4 class="text-primary text-center mt-4">Preencha os campos para cadastrar</h4>
                 <div class="col-4">
                   <label for="" class="label-control text-secondary">Código do patrimônio</label>
-                  <vee-field type="text" name="cdgPatrimonio" class="form-control form-control-sm" v-model="item.cdgPatrimonio"/>
+                  <vee-field type="number" name="cdgPatrimonio" class="form-control form-control-sm" v-model="item.cdgPatrimonio"/>
                   <span class="text-danger" v-text="errors.cdgPatrimonio" v-show="errors.cdgPatrimonio"></span>
                 </div>
                 <div class="col-4">
@@ -23,7 +23,7 @@
             <div class="row g-3">
                 <div class="col-4">
                   <label for="" class="label-control text-secondary">Valor</label>
-                  <vee-field type="text" name="valorItem" class="form-control form-control-sm" v-model="item.valorItem"/>
+                  <vee-field type="number" name="valorItem" class="form-control form-control-sm" v-model="item.valorItem"/>
                   <span class="text-danger" v-text="errors.valorItem" v-show="errors.valorItem"></span>
                 </div>
                 <div class="col-4">
@@ -92,7 +92,8 @@ export default {
     methods:{
       insertItem(){
         this.item.id = new Date().getTime()
-        this.$store.commit('cadastroItem/insertItem', this.item)
+        this.$store.commit('cadastroItem/insertItem', this.item),
+        alert('cadastro realizado com sucesso')
       }
     },
     computed:{
