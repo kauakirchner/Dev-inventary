@@ -14,14 +14,13 @@
                 Geral
               </a>
             </li>
-            <hr>
             <li>
               <router-link to="/inventario" class="btn btn-outline-primary">
               Inventário
               </router-link>
             </li>
             <li>
-              <router-link to="/" class="btn btn-outline-primary mt-2">
+              <router-link to="/" class="btn btn-outline-primary mt-2" @click="logout">
                   Sair
               </router-link>
             </li>
@@ -68,6 +67,11 @@ export default {
         return{
             mostrarSideBar: true
         }
+    },
+    methods:{
+      logout(){
+        this.$store.commit('autenticaLogin/logout')
+      }
     },
     computed:{
         autenticado(){

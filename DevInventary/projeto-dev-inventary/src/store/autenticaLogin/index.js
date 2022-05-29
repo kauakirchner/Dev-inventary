@@ -25,6 +25,10 @@ export default{
         },
         getEmail(state){
             state.email = localStorage.getItem('token')
+        },
+        logout(state){
+            localStorage.removeItem('loginUsuario')
+            state.autenticado = false
         }
     }
 }
