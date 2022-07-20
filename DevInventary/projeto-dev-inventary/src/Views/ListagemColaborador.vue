@@ -1,6 +1,6 @@
 <template>
-    <router-view></router-view>
   <div class="container-fluid">
+    <router-view></router-view>
       <div class="row justify-content-md-center">
           <div class="col-12">
             <div class="row g-3 mt-3">
