@@ -4,7 +4,7 @@ import TelaCadastro from '../Views/TelaCadastro.vue'
 import CadastroColaboradores from '../Views/CadastroColaboradores.vue'
 import ListagemColaborador from '../Views/ListagemColaborador.vue'
 import CadastroProduto from '../Views/CadastroProduto.vue'
-import InventarioA from '../Views/InventarioA.vue'//Esse A no final é por conta que o vue não estava deixando eu criar o componente só com o nome inventário
+import InventarioA from '../Views/InventarioA.vue'
 import EmprestimoItem from '../Views/EmprestimoItem.vue'
 
 const routes = [
@@ -59,7 +59,7 @@ const routes = [
         to = '/cadastro'
         return to 
     }
-    }   
+    }
 ]
 
 const router = createRouter({

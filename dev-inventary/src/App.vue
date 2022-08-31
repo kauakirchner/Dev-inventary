@@ -1,6 +1,6 @@
 <template>
- <NavBar/>
-  <div class="container-main">
+  <div class="container-main app-container">
+    <NavBar/>
     <div class="container-side-bar">
       <SideBar/>
     </div>
@@ -46,4 +46,19 @@ export default {
 .container-router{
   flex: 85;
 }
+
+.app-container {
+  margin-top: 90px;
+}
+.stepsContainer {
+    max-width: 900px;
+    padding: 20px;
+    margin: 125px auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    animation-name: go-top;
+    animation-duration: 6s;
+    animation: fade-in-animation;
+    animation-duration: 2.25s;
+  }
 </style>
