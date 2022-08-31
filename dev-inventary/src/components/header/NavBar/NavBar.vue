@@ -5,11 +5,13 @@
             <input type="checkbox" id="btn-mobile" aria-label="Abrir menu" aria-controls="menu" aria-expanded="false" aria-haspopup="true">
                 <span id="hamburger"></span>
             <ul id="menu" role="menu">
-                <li class=""><a href="https://agroforestrycarbon.com.br/">Home</a></li> 
-                <li class=""><a href="https://agroforestrycarbon.com.br/projetos" id="li-activate">Projetos</a></li> 
-                <li class="scroll_projetos"><a href="https://agroforestrycarbon.com.br/quillforms/formulario-agroflorestores/" target="_blank">Cadastre sua Agrofloresta</a></li>
-                <li class=""><a href="https://agroforestrycarbon.com.br/blog/">Blog</a></li>
-                <li class=""><a href="https://agroforestrycarbon.com.br/contato/">Contato</a></li>
+                <li class="">
+                    <router-link to="Inventario" style="font-weight: 700;">Sair</router-link>
+                </li> 
+                <li class=""></li> 
+                <li class="scroll_projetos"></li>
+                <li class=""></li>
+                <li class=""></li>
                 <div class="social-container">
                    <div class="row">
                      <span class="text-white">Olá, {{getEmail}}</span>
