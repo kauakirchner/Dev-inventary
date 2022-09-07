@@ -5,7 +5,7 @@
             <vee-form id="form-login" @submit="autenticaLogin" :validation-schema="schema" v-slot="{ errors }" class="form-container">
                 <h4 class="text-primary">Login</h4>
                 <label for="" class="label-control text-secondary">Não possui uma conta?</label>
-                <router-link class="btn btn text-secondary" to="/cadastrar-usuario">Cadastre-se</router-link>
+                <router-link class="btn btn text-secondary" to="/user-register">Cadastre-se</router-link>
                 <div class="email-field">
                     <label class="label-control text-secondary">E-Mail</label>
                     <vee-field type="email" name="email" class="form-control input-field" v-model="login.email"/>
@@ -50,7 +50,7 @@ export default {
     methods:{
         autenticaLogin(){
             this.$store.commit('autenticaLogin/autenticaLogin', this.login)
-            this.$router.push('/inventario')
+            this.$router.push('/inventory')
         },
         emConstrucao(){
             alert('Funcionalidade em construção...')
