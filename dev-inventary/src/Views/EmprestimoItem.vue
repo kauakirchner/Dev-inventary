@@ -4,17 +4,7 @@
             <div class="container mt-3">
                 <div class="content input-group">
                     <input type="text" class="w-75 form-control">
-                    <select class="badge bg-primary text-white text-center">
-                        <option>Código de Patrimonio</option>
-                            <option>
-                            Pelo título
-                            </option>
-                            <option>
-                                Pela Categoria</option>
-                            <option>
-                                Pelo Colaborador
-                            </option>
-                        </select>
+                    <button class="btn btn-primary">🔎</button>
                     </div>
                     <hr>
                     <h4>Lista de Itens</h4>

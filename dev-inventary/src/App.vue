@@ -28,16 +28,16 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
   padding: 0;
   margin: 0;
   width: 100vw;
+  /* background-color: rgba(1,1,1, 0.10); */
   
 }
 .container-main{
   display: flex;
   width: 100%;
-  height: 100vh;
+  height: 86vh;
 }
 .container-side-bar{
   flex: 15;
