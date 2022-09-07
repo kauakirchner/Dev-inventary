@@ -4,7 +4,6 @@ import router from './routes'
 import store from './store';
 import VueGravatar from 'vue3-gravatar'
 
-
 const app = createApp(App);
 app.use(router)
 app.use(store)

@@ -9,34 +9,34 @@ import EmprestimoItem from '../Views/EmprestimoItem.vue'
 
 const routes = [
     {path: '/', component: TelaLogin},
-    {path: '/cadastro', component: TelaCadastro},
-    {path: '/cadastroColaboradores', component: CadastroColaboradores,
+    {path: '/cadastrar-usuario', component: TelaCadastro},
+    {path: '/cadastrar-colaboradores', component: CadastroColaboradores,
         beforeEnter: (to) =>{
             const autenticado = localStorage.getItem('loginUsuario')
             if(autenticado){
                 return true
             }
-            to = '/cadastro'
+            to = '/cadastrar-usuario'
             return to 
         }
     },
-    {path: '/listaColaboradores', component: ListagemColaborador,
+    {path: '/colaboradores', component: ListagemColaborador,
         beforeEnter: (to) =>{
             const autenticado = localStorage.getItem('loginUsuario')
             if(autenticado){
                 return true
             }
-            to = '/cadastro'
+            to = '/cadastrar-usuario'
             return to 
         }
     },
-    {path: '/CadastroProduto', component: CadastroProduto,
+    {path: '/cadastrar-item', component: CadastroProduto,
         beforeEnter: (to) =>{
             const autenticado = localStorage.getItem('loginUsuario')
             if(autenticado){
                 return true
             }
-            to = '/cadastro'
+            to = '/cadastrar-usuario'
             return to 
         }
     },
@@ -46,17 +46,17 @@ const routes = [
         if(autenticado){
             return true
         }
-        to = '/cadastro'
+        to = '/cadastrar-usuario'
         return to 
     }
     },
-    {path: '/emprestimoItem', component: EmprestimoItem,
+    {path: '/controle-de-itens', component: EmprestimoItem,
     beforeEnter: (to) =>{
         const autenticado = localStorage.getItem('loginUsuario')
         if(autenticado){
             return true
         }
-        to = '/cadastro'
+        to = '/cadastrar-usuario'
         return to 
     }
     }

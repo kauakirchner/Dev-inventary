@@ -1,62 +1,45 @@
 <template>
 <div v-if="mostrarSideBar">
-  <transition  name="header">
-      <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; height: 100%" v-if="autenticado">
-          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-            <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark side-container" v-if="autenticado">
             <span class="fs-4">DevInventary</span>
-          </a>
           <hr>
-          <ul class="nav nav-pills flex-column mb-auto">
-            <li class="nav-item">
-              <a href="#" class="nav-link text-white">
-                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+          <ul class="nav nav-pills flex-column justify-content-center">
+              <li class="nav-item mb-3">
                 Geral
-              </a>
-            </li>
-            <li>
-              <router-link to="/inventario" class="btn btn-outline-primary">
-              Inventário
-              </router-link>
-            </li>
-            <li>
-              <router-link to="/" class="btn btn-outline-primary mt-2" @click="logout">
-                  Sair
-              </router-link>
-            </li>
-            <li>
-              <a href="#" class="nav-link text-white">
-                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
-                Colaboradores
-              </a>
-            </li>
-            <li>
-              <router-link to="/cadastroColaboradores" class="btn btn-outline-primary">
-                Cadastrar
-              </router-link>
-            </li>
-            <li>
-              <router-link to="/listaColaboradores" class="btn btn-outline-primary mt-2">Listar</router-link>
-            </li>
+              </li>
               <li>
-              <a href="#" class="nav-link text-white">
-                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
-                Produto
-              </a>
-            </li>
-            <li>
-                <router-link to="/cadastroProduto" class="btn btn-outline-primary">Cadastrar</router-link>
-            </li>
-            <li>
-                <router-link to="/emprestimoItem" class="btn btn-outline-primary mt-2">Empréstimo</router-link>
-            </li>
-            <hr>
-            <li>
-                <button class="btn btn-outline-primary" @click="mostrarSideBar = !mostrarSideBar">Esconder sidebar</button>
-            </li>
+                <router-link to="/inventario" class="side-link">Inventário</router-link>
+              </li>
+              <li>
+                <router-link to="/" class="side-link mt-2" @click="logout">Sair</router-link>
+              </li>
+              <hr>
+              <li class="nav-item mb-3 mt-3">
+                Colaboradores
+              </li>
+              <li>
+                <router-link to="/cadastroColaboradores" class="side-link">
+                  Cadastrar
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/listaColaboradores" class="side-link mt-2">Listar</router-link>
+              </li>
+              <li class="nav-item mb-3 mt-3">
+                  Produto
+              </li>
+              <li>
+                  <router-link to="/cadastroProduto" class="side-link">Cadastrar</router-link>
+              </li>
+              <li>
+                  <router-link to="/emprestimoItem" class="side-link mt-2">Empréstimo</router-link>
+              </li>
+              <hr>
+              <li>
+                  <button class="btn side-link" @click="mostrarSideBar = !mostrarSideBar">Esconder Sidebar</button>
+              </li>
           </ul>
         </div>
-      </transition>
   </div>
 </template>
 
@@ -86,23 +69,33 @@ export default {
 
 </script>
 
-<style>
-.sidebar-container{
-    height: 100%;
+<style scoped>
+.side-container{
+    height: 80vh;
     width: 100%;
-    background-color: rgba(46, 51, 202, 0.987);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-right: 1px solid rgba(1, 1, 1, 0.80);
+    border: 1px solid red;
 }
-.header-leave-to,
-.header-enter-from{
-    opacity: 0;
-    font-size: 0px;
-}
-.header-leave-from,
-.header-enter-to{
-    opacity: 1;
-}
-.header-enter-active,.header-leave-active{
-    transition:all 2s;
+.side-link {
+     color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    display: block;
+    text-align: center;
+    border: 1px solid #111;
+    border-radius: 10px;
 }
 
+.side-link:hover {
+    transform: scale(1.040);
+    transition: 0.23s ease-in-out;
+    transition-delay: .2s;
+    background-color: #111;
+    border-radius: 10px;;
+}
 </style>
