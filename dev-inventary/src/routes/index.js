@@ -1,7 +1,7 @@
 import {createRouter, createWebHashHistory} from 'vue-router'
 import TelaLogin from '../Views/TelaLogin.vue'
 import TelaCadastro from '../Views/TelaCadastro.vue'
-import ListagemColaborador from '../Views/ListagemColaborador.vue'
+import ColaboratorsList from '../Views/ColaboratorsList.vue'
 import InventarioA from '../Views/InventarioA.vue'
 import EmprestimoItem from '../Views/EmprestimoItem.vue'
 import ColaboratorsRegister from '../Views/ColaboratorsRegister.vue'
@@ -9,54 +9,54 @@ import ProductRegister from '../Views/ProductRegister.vue'
 
 const routes = [
     {path: '/', component: TelaLogin},
-    {path: '/cadastrar-usuario', component: TelaCadastro},
-    {path: '/cadastrar-colaboradores', component: ColaboratorsRegister,
+    {path: '/user-register', component: TelaCadastro},
+    {path: '/register-colaborators', component: ColaboratorsRegister,
         beforeEnter: (to) =>{
             const autenticado = localStorage.getItem('loginUsuario')
             if(autenticado){
                 return true
             }
-            to = '/cadastrar-usuario'
+            to = '/user-register'
             return to 
         }
     },
-    {path: '/colaboradores', component: ListagemColaborador,
+    {path: '/colaborators', component: ColaboratorsList,
         beforeEnter: (to) =>{
             const autenticado = localStorage.getItem('loginUsuario')
             if(autenticado){
                 return true
             }
-            to = '/cadastrar-usuario'
+            to = '/user-register'
             return to 
         }
     },
-    {path: '/cadastrar-item', component: ProductRegister,
+    {path: '/item-register', component: ProductRegister,
         beforeEnter: (to) =>{
             const autenticado = localStorage.getItem('loginUsuario')
             if(autenticado){
                 return true
             }
-            to = '/cadastrar-usuario'
+            to = '/user-register'
             return to 
         }
     },
-    {path: '/inventario', component: InventarioA,
+    {path: '/inventory', component: InventarioA,
     beforeEnter: (to) =>{
         const autenticado = localStorage.getItem('loginUsuario')
         if(autenticado){
             return true
         }
-        to = '/cadastrar-usuario'
+        to = '/user-register'
         return to 
     }
     },
-    {path: '/controle-de-itens', component: EmprestimoItem,
+    {path: '/item-control', component: EmprestimoItem,
     beforeEnter: (to) =>{
         const autenticado = localStorage.getItem('loginUsuario')
         if(autenticado){
             return true
         }
-        to = '/cadastrar-usuario'
+        to = '/user-register'
         return to 
     }
     }

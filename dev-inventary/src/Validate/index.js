@@ -1,7 +1,6 @@
 import {defineRule} from 'vee-validate'
 
 const validateEmail = (email) => {
-    //Função que valida email.
     return String(email)
       .toLowerCase()
       .match(
@@ -10,7 +9,6 @@ const validateEmail = (email) => {
   };
 
 const requiredRule = defineRule('required', campo =>{
-    //Função que torna o campo obrigatório.
     if(!campo || campo.length === 0){
         return 'Campo obrigatório!!'
     }
@@ -18,7 +16,6 @@ const requiredRule = defineRule('required', campo =>{
 });
 
 const minLength = defineRule('minLength',  (campo, [target]) =>{
-    //Função que valida se a senha tem ao menos 8 caracteres.
     if(!campo || campo.length === 0){
         return 'Campo obrigatório!!'
     }
@@ -29,7 +26,6 @@ const minLength = defineRule('minLength',  (campo, [target]) =>{
 });
 
 const requiredEmail = defineRule('emailValidation',campo =>{
-    //Função que chama a de validação de email e a torna um campo obrigatório.
     if(!campo || campo.length === 0){
         return 'Campo obrigatório!!'
     }
@@ -40,7 +36,6 @@ const requiredEmail = defineRule('emailValidation',campo =>{
 });
 
 const equalPasswords = defineRule('confirmed', (value, [target], ctx) => {
-    //Função que valida se a senha e a senha confirmada são iguais
     if (value === ctx.form[target]) {
       return true;
     }
@@ -48,14 +43,9 @@ const equalPasswords = defineRule('confirmed', (value, [target], ctx) => {
   });
 
   const lengthCep = defineRule('lengthCep', (campo, [target]) =>{
-      //Função que define um mínimo de caracteres para o cep
       if(campo.length != target){
           return 'Cep inválido!!'
       }
   })
-
-
-
-
 
 export {requiredRule, requiredEmail, equalPasswords, minLength, lengthCep}

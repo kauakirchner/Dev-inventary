@@ -45,7 +45,7 @@
                             <div class="row mt">
                                 <div class="col">
                                     <label class="label-control text-secondary">Cep</label>
-                                    <vee-field type="text" class="form-control form-control-sm" name="cep" v-model="colaborador.cep" v-mask="'#####-###'"/>
+                                    <vee-field type="text" class="form-control form-control-sm" name="cep" v-model="colaborador.cep"/>
                                     <span class="text-danger" v-text="errors.cep" v-show="errors.cep"></span>
                                 </div>
                                 <div class="col">
@@ -126,7 +126,7 @@ export default {
         telefone: 'required',
         email: 'required|emailValidation',
         cargo: 'required',
-        cep: 'required|lengthCep:8',
+        cep: 'required',
         cidade: 'required',
         estado: 'required',
         logradouro: 'required',

@@ -49,20 +49,20 @@
         <div class="menu">
             <span class="side-title">Geral</span>
             <div class="side-item-container">
-              <li><router-link class="side-link" to="/inventario">Inventário</router-link></li>
+              <li><router-link class="side-link" to="/inventory">Inventário</router-link></li>
               <li><router-link  @click="logout" class="side-link" to="/">Sair</router-link></li>
             </div>
             <hr>
             <div class="side-item-container">
               <li><span class="side-title">Colaboradores</span></li>
-              <li><router-link class="side-link" to="/cadastrar-colaboradores">Cadastrar</router-link></li>
-              <li><router-link class="side-link" to="/colaboradores">Ver colaboradores</router-link></li>
+              <li><router-link class="side-link" to="/register-colaborators">Cadastrar</router-link></li>
+              <li><router-link class="side-link" to="/colaborators">Ver colaboradores</router-link></li>
             </div>
             <hr>
             <div class="side-item-container">
               <li><span class="side-title">Itens</span></li>
-              <li><router-link class="side-link" to="/cadastrar-item">Cadastrar</router-link></li>
-              <li><router-link class="side-link" to="/controle-de-itens">Empréstimo</router-link></li>
+              <li><router-link class="side-link" to="/item-register">Cadastrar</router-link></li>
+              <li><router-link class="side-link" to="/item-control">Empréstimo</router-link></li>
             </div>
             <div class="side-show-container">
               <button class="btn btn-outline-primary showSideBar" @click="showSidebar = !showSidebar">⇦</button>
@@ -116,33 +116,13 @@ li {
     border-right: 1px solid rgba(1, 1, 1, 0.80);
     background-color: #111;
     opacity: .90;
-    position: initial;
+    position: relative;
 }
 
 .side-show-container {
   display: flex;
   justify-content: end;
 }
-
-  /* .side-link {
-      color: white;
-      text-decoration: none;
-      font-family: 'Poppins', sans-serif;
-      font-size: 14px;
-      font-weight: 400;
-      display: block;
-      text-align: center;
-      border: 1px solid #111;
-      border-radius: 10px;
-  }
-
-  .side-link:hover {
-      transform: scale(1.040);
-      transition: 0.23s ease-in-out;
-      transition-delay: .2s;
-      background-color: #111;
-      border-radius: 10px;;
-  } */
 
 .side-item-container {
   width: 100%;
