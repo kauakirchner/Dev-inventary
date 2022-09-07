@@ -28,10 +28,10 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
   padding: 0;
   margin: 0;
   width: 100vw;
+  /* background-color: rgba(1,1,1, 0.10); */
   
 }
 .container-main{
