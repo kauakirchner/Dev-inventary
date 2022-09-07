@@ -21,7 +21,7 @@
                 </div>
                 <div class="form-submit">
                     <button type="submit" class="btn btn-outline-primary mt-3">Entrar</button>
-                    <button type="button" class="btn btn mt-3 google-btn" @click="emConstrucao">Entrar com Google</button>
+                    <button type="button" class="btn btn-outline-white mt-3 google-btn text-light" @click="emConstrucao">Entrar com Google</button>
                 </div>
             </vee-form>
         </div>
@@ -80,7 +80,7 @@ export default {
 .form-container {
     width: 600px;
     padding: 20px;
-    margin: 125px auto;
+    margin: 50px;
     border-radius: 15px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     background-color: #111;

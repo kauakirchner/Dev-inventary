@@ -1,31 +1,20 @@
 <template>
-      <!-- <header id="header" v-if="autenticado">
-        <nav id="nav">
-            <div class="img-container">
-                <img src="../../../assets/NavImg.jpg" alt="" id="logo"> 
-            </div>
-            <div class="user-email-container">
-                <ul id="menu">
-                    <li class="">
-                        <span class="text-white">Olá, {{getEmail}}</span>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header> -->
-        <header id="header">
-            <div class="teste">
+        <header id="header" v-if="autenticado">
+            <div class="navbar-container">
                 <div class="img-container">
                     <img src="../../../assets/NavImg.jpg" alt="" id="logo">
                 </div>
             </div>
             <nav id="nav" >
                 <span id="hamburger"></span>
-                <div class="teste-2">
-                    <div class="user-email-container">
-                        <ul id="menu" role="menu">
-                            <li class="text-light"><span>Olá, {{getEmail}}</span></li> 
-                        </ul>
+                <div class="row">
+                    <div class="email-container">
+                        <div class="user-email-container">
+                            <ul id="menu" role="menu">
+                                <vue-gravatar class="gravatar" email="{{colaborador.email}}"></vue-gravatar>
+                                <li class="text-light"><span>{{"Olá, " + getEmail}}</span></li> 
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -59,11 +48,11 @@ export default {
     width: 100%;
 }
 
-.teste {
+.navbar-container {
     width: 70%;
 }
 
-.teste-2 {
+.email-container {
     width: 100%;
 }
 

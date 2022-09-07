@@ -1,78 +1,38 @@
 <template>
-<!-- <div v-if="mostrarSideBar">
-      <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark side-container" v-if="autenticado">
-            <span class="fs-4">DevInventary</span>
-          <hr>
-          <ul class="nav nav-pills flex-column justify-content-center">
-              <li class="nav-item mb-3">
-                Geral
-              </li>
-              <li>
-                <router-link to="/inventario" class="side-link">Inventário</router-link>
-              </li>
-              <li>
-                <router-link to="/" class="side-link mt-2" @click="logout">Sair</router-link>
-              </li>
+  <div v-show="autenticado">
+    <div class="side-container" v-if="showSidebar">
+      <div class="">
+        <aside class="">
+          <span class="side-title">Dev Inventary</span>
+          <hr class="side-hr">
+          <div class="menu">
+              <span class="side-title">Geral</span>
+              <div class="side-item-container">
+                <li><router-link class="side-link" to="/inventory">Inventário</router-link></li>
+                <li><router-link  @click="logout" class="side-link" to="/">Sair</router-link></li>
+              </div>
               <hr>
-              <li class="nav-item mb-3 mt-3">
-                Colaboradores
-              </li>
-              <li>
-                <router-link to="/cadastroColaboradores" class="side-link">
-                  Cadastrar
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/listaColaboradores" class="side-link mt-2">Listar</router-link>
-              </li>
-              <li class="nav-item mb-3 mt-3">
-                  Produto
-              </li>
-              <li>
-                  <router-link to="/cadastroProduto" class="side-link">Cadastrar</router-link>
-              </li>
-              <li>
-                  <router-link to="/emprestimoItem" class="side-link mt-2">Empréstimo</router-link>
-              </li>
+              <div class="side-item-container">
+                <li><span class="side-title">Colaboradores</span></li>
+                <li><router-link class="side-link" to="/register-colaborators">Cadastrar</router-link></li>
+                <li><router-link class="side-link" to="/colaborators">Ver colaboradores</router-link></li>
+              </div>
               <hr>
-              <li>
-                  <button class="btn side-link" @click="mostrarSideBar = !mostrarSideBar">Esconder Sidebar</button>
-              </li>
-          </ul>
-        </div>
-  </div> -->
-  <div class="side-container"  v-if="showSidebar">
-    <div class="">
-      <aside v-if="autenticado" class="">
-        <span class="side-title">Dev Inventary</span>
-        <hr class="side-hr">
-        <div class="menu">
-            <span class="side-title">Geral</span>
-            <div class="side-item-container">
-              <li><router-link class="side-link" to="/inventory">Inventário</router-link></li>
-              <li><router-link  @click="logout" class="side-link" to="/">Sair</router-link></li>
-            </div>
-            <hr>
-            <div class="side-item-container">
-              <li><span class="side-title">Colaboradores</span></li>
-              <li><router-link class="side-link" to="/register-colaborators">Cadastrar</router-link></li>
-              <li><router-link class="side-link" to="/colaborators">Ver colaboradores</router-link></li>
-            </div>
-            <hr>
-            <div class="side-item-container">
-              <li><span class="side-title">Itens</span></li>
-              <li><router-link class="side-link" to="/item-register">Cadastrar</router-link></li>
-              <li><router-link class="side-link" to="/item-control">Empréstimo</router-link></li>
-            </div>
-            <div class="side-show-container">
-              <button class="btn btn-outline-primary showSideBar" @click="showSidebar = !showSidebar">⇦</button>
-            </div>
-        </div>
-      </aside>
+              <div class="side-item-container">
+                <li><span class="side-title">Itens</span></li>
+                <li><router-link class="side-link" to="/item-register">Cadastrar</router-link></li>
+                <li><router-link class="side-link" to="/item-control">Empréstimo</router-link></li>
+              </div>
+              <div class="side-show-container">
+                <button class="btn btn-outline-primary showSideBar" @click="showSidebar = !showSidebar">⇦</button>
+              </div>
+          </div>
+        </aside>
+      </div>
     </div>
-  </div>
-  <div v-else>
-    <button class="btn btn-outline-primary" @click="showSidebar = !showSidebar">⇨</button>
+    <div v-else>
+      <button class="btn btn-outline-primary" @click="showSidebar = !showSidebar">⇨</button>
+    </div>
   </div>
 </template>
 

@@ -1,13 +1,13 @@
 <template>
     <div class="colaborators-container">
         <router-view></router-view>
-        <div class="search-colaborators">
+        <!-- <div class="search-colaborators">
             <label for="" class="text-primary">Digite o nome do colaborador para buscar</label>
         </div>
             <div class="content input-group justify-content-center mt-2">
                     <input type="text" class="form-control">
                     <button class="btn btn-outline-primary">🔎</button>
-            </div>
+            </div> -->
             <div class="row mt-4">
                 <div class="colaborators col-sm-12 col-md-6 col-lg-3" v-for="colaborador in colaboradores" :key="colaborador.id">
                     <div class="colaborators-card">
