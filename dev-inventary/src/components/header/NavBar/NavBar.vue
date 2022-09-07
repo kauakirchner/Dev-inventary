@@ -94,6 +94,7 @@ li a:hover{
 #logo{
     height: 80px;
     transition: all 0.3s ease-in-out;
+    border-radius: 5px;
 }
 
 #logo:hover{

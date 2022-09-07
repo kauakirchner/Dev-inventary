@@ -37,7 +37,7 @@ export default {
 .container-main{
   display: flex;
   width: 100%;
-  height: 100vh;
+  height: 86vh;
 }
 .container-side-bar{
   flex: 15;

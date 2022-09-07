@@ -1,5 +1,5 @@
 <template>
-    <router-view></router-view>
+    <router-view></router-view> 
     <transition name="header">
         <div class="container-fluid">
             <div class="row justify-content-md-center">
@@ -38,9 +38,7 @@
                     </div>
                 </div>
                 <div class="col-7">
-                    <div class="col-12">
-                        <img src="../assets/imgLogin.jpg" class="img-fluid" alt="">
-                    </div>
+                   
                 </div>
             </div>
         </div>
