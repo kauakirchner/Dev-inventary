@@ -10,7 +10,7 @@
             </div>
             <div class="row mt-4">
                 <div class="colaborators col-sm-12 col-md-6 col-lg-3" v-for="colaborador in colaboradores" :key="colaborador.id">
-                    <div class="product-card">
+                    <div class="colaborators-card">
                             <vue-gravatar class="gravatar" email="{{colaborador.email}}"></vue-gravatar>
                             <h5 class="card-title text-light">{{colaborador.nome}}</h5>
                             <span class="card-text text-light">{{colaborador.email}}</span>
@@ -51,7 +51,7 @@ export default {
     display: flex;
     justify-content: center;
 }
-.product-card {
+.colaborators-card {
     background-repeat: no-repeat;
     min-width: 200px;
     width: 200px;

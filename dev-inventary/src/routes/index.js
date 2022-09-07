@@ -1,15 +1,15 @@
 import {createRouter, createWebHashHistory} from 'vue-router'
-import TelaLogin from '../Views/TelaLogin.vue'
-import TelaCadastro from '../Views/TelaCadastro.vue'
+import UserLogin from '../Views/UserLogin.vue'
+import UserRegister from '../Views/UserRegister.vue'
 import ColaboratorsList from '../Views/ColaboratorsList.vue'
-import InventarioA from '../Views/InventarioA.vue'
 import EmprestimoItem from '../Views/EmprestimoItem.vue'
 import ColaboratorsRegister from '../Views/ColaboratorsRegister.vue'
 import ProductRegister from '../Views/ProductRegister.vue'
+import ProductInventory from  '../Views/ProductInventory.vue'
 
 const routes = [
-    {path: '/', component: TelaLogin},
-    {path: '/user-register', component: TelaCadastro},
+    {path: '/', component: UserLogin},
+    {path: '/user-register', component: UserRegister},
     {path: '/register-colaborators', component: ColaboratorsRegister,
         beforeEnter: (to) =>{
             const autenticado = localStorage.getItem('loginUsuario')
@@ -40,7 +40,7 @@ const routes = [
             return to 
         }
     },
-    {path: '/inventory', component: InventarioA,
+    {path: '/inventory', component: ProductInventory,
     beforeEnter: (to) =>{
         const autenticado = localStorage.getItem('loginUsuario')
         if(autenticado){
@@ -59,7 +59,7 @@ const routes = [
         to = '/user-register'
         return to 
     }
-    }
+    },
 ]
 
 const router = createRouter({
