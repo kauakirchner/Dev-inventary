@@ -63,12 +63,25 @@ export default {
 </script>
 <style scoped>
 
+@keyframes fade-in-bar-animation {
+  from{
+    opacity: 0;
+    width: 0%;
+    font-size: 5px;
+  }
+  to{
+    opacity: 1;
+    width: 100%;
+    transition: all 2s;
+  }
+}
+
 li {
   list-style-type: none;
 }
 
 .side-container{
-    height: 100%;
+    height: 88vh;
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -77,6 +90,8 @@ li {
     background-color: #111;
     opacity: .90;
     position: relative;
+    animation: fade-in-bar-animation;
+    animation-duration: 2s;
 }
 
 .side-show-container {

@@ -42,6 +42,19 @@ export default {
 
 <style scoped>
 
+@keyframes fade-in-bar-animation {
+  from{
+    opacity: 0;
+    width: 0%;
+    font-size: 5px;
+  }
+  to{
+    opacity: 1;
+    width: 100%;
+    transition: all 2s;
+  }
+}
+
 .img-container {
     display: flex;
     justify-content: flex-start;
@@ -105,6 +118,8 @@ li a:hover{
     top: 0;
     background-color: #111;
     opacity: .90;
+    animation: fade-in-bar-animation;
+    animation-duration: 2s;
 }
 
 #menu{

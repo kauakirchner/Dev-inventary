@@ -10,7 +10,7 @@
                     <h4>Lista de Itens</h4>
                     <p class="text-danger">
                         Não há itens cadastrados - 
-                        <router-link to="/cadastroProduto" class="btn btn-outline-danger">
+                        <router-link to="/item-register" class="btn btn-outline-danger">
                         Realizar novo cadastro
                         </router-link>
                     </p>
