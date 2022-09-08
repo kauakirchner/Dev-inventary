@@ -112,7 +112,7 @@ export default {
     background-color: #111;
     animation: fade-in-colaborators-form;
     animation-duration: 2.25s;
-    max-height: 510px;
+    max-height: 100%;
 }
 
 .form-product-container > span {

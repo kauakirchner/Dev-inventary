@@ -43,9 +43,10 @@ const equalPasswords = defineRule('confirmed', (value, [target], ctx) => {
   });
 
   const lengthCep = defineRule('lengthCep', (campo, [target]) =>{
-      if(campo.length != target){
+      if(campo.length < target){
           return 'Cep inválido!!'
       }
   })
+
 
 export {requiredRule, requiredEmail, equalPasswords, minLength, lengthCep}

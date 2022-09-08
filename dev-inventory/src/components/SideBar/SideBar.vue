@@ -76,6 +76,20 @@ export default {
   }
 }
 
+@keyframes fade-out-bar-animation {
+  to {
+    opacity: 0;
+    width: 0%;
+    font-size: 5px;
+  
+  }
+  from {
+    opacity: 1;
+    width: 100%;
+    transition: all 2s;
+  }
+}
+
 li {
   list-style-type: none;
 }

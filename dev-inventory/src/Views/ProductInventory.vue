@@ -42,6 +42,11 @@ export default {
     padding-left: 15px;
 }
 
+.product-card:hover {
+    transform: scale(1.040);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.45);
+}
+
 .product-card > .product-img {
     display: flex;
     justify-content: start;

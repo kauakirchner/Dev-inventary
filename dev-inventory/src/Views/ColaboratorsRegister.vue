@@ -45,8 +45,9 @@
                             <div class="row mt">
                                 <div class="col">
                                     <label class="label-control text-secondary">Cep</label>
-                                    <vee-field type="text" class="form-control form-control-sm" name="cep" v-model="colaborador.cep"/>
+                                    <vee-field type="text" class="form-control form-control-sm" name="cep" v-model="colaborador.cep" v-mask="'#####-###'"/>
                                     <span class="text-danger" v-text="errors.cep" v-show="errors.cep"></span>
+                                    <span class="text-danger">{{undefinedCepMsg}}</span>
                                 </div>
                                 <div class="col">
                                     <label class="label-control text-secondary">Cidade</label>
@@ -140,7 +141,8 @@ export default {
         colaboradores:[],
         colaborador:{
             fullAdress:''
-        }
+        },
+        undefinedCepMsg: ''
       }
   },
   methods:{
@@ -149,7 +151,9 @@ export default {
         this.$store.commit('cadastroColaborador/insertColaborador', this.colaborador)
             axios.get(`https://viacep.com.br/ws/${this.colaborador.cep}/json/`).then((response) =>{
                 this.colaborador.fullAdress = response.data
-            }).catch((error) =>{
+                console.log(this.colaborador.fullAdress)
+            }).catch((error) => {
+                this.undefinedCepMsg = 'Cep não encontrado'
                 return error
             })
             alert('Cadastro realizado com sucesso')
@@ -171,6 +175,12 @@ export default {
     transition: all 2s;
   }
 }
+
+.personal-data > span {
+    display: flex;
+    justify-content: center;
+}
+
 .address > span {
     display: flex;
     justify-content: center;
@@ -184,6 +194,6 @@ export default {
     background-color: #111;
     animation: fade-in-colaborators-form;
     animation-duration: 2.25s;
-    max-height: 510px;
+    max-height: 100%;
 }
 </style>

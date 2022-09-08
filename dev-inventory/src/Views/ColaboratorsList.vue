@@ -65,8 +65,13 @@ export default {
     padding-left: 15px;
 }
 
+.colaborators-card:hover {
+    transform: scale(1.040);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.45);
+}
+
 .product-card > .gravatar {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
 }
 </style>
