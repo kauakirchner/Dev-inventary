@@ -31,7 +31,7 @@
       </div>
     </div>
     <div v-else>
-      <button class="btn btn-outline-primary" @click="showSidebar = !showSidebar">⇨</button>
+      <button class="btn btn-primary" @click="showSidebar = !showSidebar">⇨</button>
     </div>
   </div>
 </template>

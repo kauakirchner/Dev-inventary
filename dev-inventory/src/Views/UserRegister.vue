@@ -6,17 +6,17 @@
                 <h4 class="text-primary">Cadastre-se</h4>
                 <div class="email-field">
                     <label class="label-control text-secondary">Email</label>
-                    <vee-field type="email" name="email" class="form-control" v-model="usuario.email"/>
+                    <vee-field type="email" name="email" class="form-control input-field" v-model="usuario.email"/>
                     <span class="text-danger" v-text="errors.email" v-show="errors.email"></span>
                 </div>
                 <div class="password-field">
                     <label class="label-control text-secondary">Senha</label>
-                    <vee-field type="password" name="senha" class="form-control" v-model="usuario.senha"/>
+                    <vee-field type="password" name="senha" class="form-control input-field" v-model="usuario.senha"/>
                     <span class="text-danger" v-text="errors.senha" v-show="errors.senha"></span>
                 </div>
                 <div class="password-field">
                     <label class="label-control text-secondary">Confirme sua senha</label>
-                    <vee-field type="password" name="senhaConfirmada" class="form-control" v-model="usuario.senhaConfirmada"/>
+                    <vee-field type="password" name="senhaConfirmada" class="form-control input-field" v-model="usuario.senhaConfirmada"/>
                     <span class="text-danger" v-text="errors.senhaConfirmada" v-show="errors.senhaConfirmada"></span>
                 </div>
                 <div class="form-submit">

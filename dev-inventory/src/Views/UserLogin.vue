@@ -80,7 +80,7 @@ export default {
 .form-container {
     width: 600px;
     padding: 20px;
-    margin: 50px;
+    margin: 50px auto;
     border-radius: 15px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     background-color: #111;
@@ -88,7 +88,7 @@ export default {
     animation-duration: 2.25s;
   }
 
-  .form-control {
+  .input-field {
     max-width: 500px;
   }
   

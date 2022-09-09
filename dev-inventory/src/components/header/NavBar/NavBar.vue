@@ -78,19 +78,13 @@ ul{
     padding: 0px;
 }
 
-a{
-    color: #fff;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 400;
-}
 
-li a:hover{
-    color: #018035;
+li:hover{
+    color: #287CD0;
     transform: scale(1.025);
     transition: 0.23s ease-in-out;
     transition-delay: .2s;
-    border-bottom: 4px solid #018035;
+    border-bottom: 4px solid #287CD0;
 }
 
 #logo{
@@ -126,16 +120,7 @@ li a:hover{
     display: flex;
     list-style: none;
     gap: 1rem;
-    
 }
-
-#menu a{
-    display: block;
-    padding: 1.25rem;
-    border-radius: 1px;
-    transition: 0.3s ease-in-out;
-}
-
 
 @media (max-width: 900px){
 
@@ -162,31 +147,17 @@ li a:hover{
         overflow-y: hidden;
         transition: all 0.4s ease-in-out;
     }
-
-    #nav.active #menu {
-        height: 100vh;
-        visibility: visible;
-    }
-
-    #menu a{
-        max-width: 50vw;
-        padding: 1.5rem;
-        margin: 3rem auto;
-        border-bottom: 2px solid rgb(97, 193, 62, 0.75);
-        background-color: rgba(56, 56, 56, 0.35);
-        box-shadow: 0px 0px 3px rgb(0, 0, 0, 1);
-        text-align: center;
-    }
-
-    #menu a:hover{
-        box-shadow: 0px 0px 12px rgb(97, 193, 62, 0.75);
-        
-    }
-
 }
 
 .gravatar{
     width: 4vw;
     height: 8vh;
+}
+
+.gravatar:hover {
+    transform: scale(1.040);
+    box-shadow: 5px 5px 8px rgba(1, 1, 1, .90);
+    transition: .2s;
+    transition-delay: .2s;
 }
 </style>

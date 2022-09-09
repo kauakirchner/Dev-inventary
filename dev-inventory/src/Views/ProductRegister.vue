@@ -41,7 +41,7 @@
             <div class="row">
                 <div class="col">
                     <label for="" class="label-control text-secondary">Modelo</label>
-                    <vee-field type="text" name="modeloItem" class="form-control form-control-sm" v-model="item.modeloItem"/>
+                    <vee-field type="text" name="modeloItem" class="form-control form-control-sm teste" v-model="item.modeloItem"/>
                     <span class="text-danger" v-text="errors.modeloItem" v-show="errors.modeloItem"></span>
                 </div>
             </div>
@@ -119,5 +119,4 @@ export default {
     display: flex;
     justify-content: center;
 }
-
 </style>
